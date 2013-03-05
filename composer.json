@@ -1,0 +1,20 @@
+{
+	"name": "epsi/sidenote",
+	"type": "library",
+	"description": "Lightweight library for parsing annotations in PHP",
+	"keywords": ["annotations", "aop"],
+	"homepage": "https://github.com/stronger/sidenote",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Michał Rudnicki",
+			"email": "michal.rudnicki@epsi.pl"
+		}
+	],
+	"autoload": {
+		"psr-0": {"Sidenote": "src/"}
+	},
+	"require": {
+		"php": ">=5.3.0"
+	}
+}
