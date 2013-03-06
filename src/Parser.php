@@ -3,6 +3,7 @@
 namespace Epsi\Sidenote;
 
 use \Reflector;
+use \Exception;
 
 /**
  * Annotation parser

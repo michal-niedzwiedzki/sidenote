@@ -12,7 +12,7 @@
 		}
 	],
 	"autoload": {
-		"psr-0": {"Epsi\\Sidenote": "src/"}
+		"psr-0": { "Epsi\\Sidenote": "src/" }
 	},
 	"require": {
 		"php": ">=5.3.0"
