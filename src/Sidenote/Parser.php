@@ -7,12 +7,31 @@ use \Reflector;
 /**
  * Annotation parser
  *
+ * Can parse class/property/method annotations.
+ * Upon first request reads all annotations on given reflector.
+ * Keeps parsed annotations cached.
+ *
  * @author Michał Rudnicki <michal.rudnicki@epsi.pl>
  */
 final class Parser {
 
+	/**
+	 * Local cache for parsed annotations
+	 *
+	 * Key is CRC32 sum of a reflector string representation.
+	 * Value is hash of parsed annotations as keys pointing to array of their values.
+	 *
+	 * @var array
+	 */
 	private static $cache = array();
 
+	/**
+	 * Return annotation value
+	 *
+	 * @param Reflector $reflection
+	 * @param string $annotation
+	 * @return mixed
+	 */
 	public static function get(Reflector $reflection, $annotation) {
 		$key = crc32($reflection->__toString());
 		$annotation[0] === "@" or $annotation = "@" . $annotation;
@@ -22,6 +41,13 @@ final class Parser {
 			: FALSE;
 	}
 
+	/**
+	 * Return all annotation values
+	 *
+	 * @param Reflector $reflection
+	 * @param string $annotation
+	 * @return mixed[]
+	 */
 	public static function getAll(Reflector $reflection, $annotation) {
 		$key = crc32($reflection->__toString());
 		$annotation[0] === "@" or $annotation = "@" . $annotation;
@@ -31,6 +57,12 @@ final class Parser {
 			: array();
 	}
 
+	/**
+	 * Parse annotations on given reflector
+	 *
+	 * @param Reflector $reflection
+	 * @return array
+	 */
 	public static function parse(Reflector $reflection) {
 		// check if reflection provides doc comment
 		if (!method_exists($reflection, "getDocComment")) {
