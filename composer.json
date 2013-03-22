@@ -1,9 +1,9 @@
 {
 	"name": "epsi/sidenote",
-	"type": "library",
 	"description": "Lightweight library for parsing annotations in PHP",
 	"keywords": ["annotations", "aop"],
 	"homepage": "https://github.com/stronger/sidenote",
+	"type": "library",
 	"license": "MIT",
 	"authors": [
 		{

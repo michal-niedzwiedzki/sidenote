@@ -29,7 +29,7 @@ final class Parser {
 	/**
 	 * Return annotation value
 	 *
-	 * @param Reflector $reflection
+	 * @param \Reflector $reflection
 	 * @param string $annotation
 	 * @return mixed
 	 */
@@ -45,7 +45,7 @@ final class Parser {
 	/**
 	 * Return all annotation values
 	 *
-	 * @param Reflector $reflection
+	 * @param \Reflector $reflection
 	 * @param string $annotation
 	 * @return mixed[]
 	 */
@@ -61,7 +61,7 @@ final class Parser {
 	/**
 	 * Parse annotations on given reflector
 	 *
-	 * @param Reflector $reflection
+	 * @param \Reflector $reflection
 	 * @return array
 	 */
 	public static function parse(Reflector $reflection) {
